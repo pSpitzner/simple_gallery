@@ -1,0 +1,143 @@
+html, body {
+  /*keep mobile safari controls*/
+  /*found no other way to get consistent behvariour for vanishing*/
+  /*navbars than to set height to 100% recursively*/
+  height: 100%;
+  /*set this to visible, otherwise bottom buttons vanish when 'overdraggin'*/
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+
+  /*overwrite retareded defaults*/
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.bg-black {
+  background-color: #000 !important;
+}
+
+.bg-gray {
+  background-color: #212529;
+}
+
+.hidden {
+  display: none;
+  height: 0px;
+  overflow: hidden;
+}
+
+#transition-dummy {
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
+  -webkit-transition: opacity 0.15s ease-in;
+  -moz-transition: opacity 0.15s ease-in;
+  -o-transition: opacity 0.15s ease-in;
+  -ms-transition: opacity 0.15s ease-in;
+  background: black;
+  position: fixed;
+  top: -50vh;
+  left: -50vh;
+  height: 200vh;
+  width: 200vw;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 100;
+}
+
+#transition-dummy.fade {
+  opacity: 1;
+}
+
+.header {
+  margin: 1rem;
+  color: #f8f9fa !important;
+  text-align: center;
+}
+.header h1 {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 2.5rem;
+  display: block;
+}
+.download-button {
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-block;
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+}
+.download-button:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.gallery {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  grid-auto-rows: 1;
+  padding: 10px;
+  padding-left:   calc(env(safe-area-inset-left) + 10px);
+  padding-right:  calc(env(safe-area-inset-right) + 10px);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 10px);
+}
+
+.gallery .gallery-item {
+  height: 170px;
+  border-radius: 5px;
+  background-color: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  /*box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);*/
+  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+}
+
+.gallery .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery .gallery-item:hover {
+  transform: scale(1.015);
+}
+
+@media (hover: none) {
+    .gallery .gallery-item {
+      transform: scale(1.0) !important;
+    }
+}
+
+#github-href {
+  background-color: #111519;
+  text-decoration: none;
+}
+
+#github-feather {
+  width: 36px;
+  height: 36px;
+  stroke-width: 1.5;
+}
