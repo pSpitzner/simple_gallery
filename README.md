@@ -3,7 +3,7 @@
 So, you happen to have a webserver and sometimes want to share photos with friends?
 Me too.
 
-[Check the demo](https://makeitso.one/photodemo/gallery.php?src=demo)
+[Check out the demo](https://makeitso.one/photodemo/gallery.php?src=demo)
 
 This is the idea:
 
@@ -12,11 +12,12 @@ This is the idea:
 - share the link
 
 ## Folder structure
-The php files assume the following folder structure, which can be created by the `photo_thumbs.sh` script.
+The php file assumes the following folder structure, which can be created by the `photo_thumbs.sh` script.
 
 ```
-projects
-└─ my_project_name
+gallery.php
+projects/
+└─ my_project_name/
     ├─ orig (needed)
     ├─ lg (large images)
     ├─ md (medium thumbnails)
@@ -29,9 +30,13 @@ localhost/photos/gallery.php?src=my_project_name
 ```
 
 To set this up:
+clone the repo, create a project in `projects`, with a subfolder called `orig` that contains your full-size image files. Then:
 ```
 photo_thumbs.sh ./projects/my_project_name
 ```
+
+### Note:
+Do not put shell scripts and gitfiles on your webshare, you have to clean up the repo after cloning.
 
 ### Live photos
 To enable live-photos, add `.mov` files to the `mov` folder. The names need to match those of the photos in `orig`, minus extension.
