@@ -186,17 +186,12 @@
 </body>
 
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js"></script> -->
-<script src="./js/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js"></script>
 
-
-<!-- <script type="text/javascript">
-    open_wall(0)
-</script> -->
 <?php
     if ($load_live_photo_js) {
         echo '<script src="https://cdn.apple-livephotoskit.com/lpk/1/livephotoskit.js"></script>';
     }
 ?>
-<!-- <script src='./js/livephotoskit.js'></script> -->
+
 <script src="./js/livephotos.js"></script>

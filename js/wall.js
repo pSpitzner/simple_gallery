@@ -82,20 +82,20 @@ function stretch(caller) {
     let sw = document.getElementById("scrolling-wrapper");
     // sw.classList.toggle("stretched");
     if (sw.classList.contains("stretch_conti")) {
-      console.log("scrollmode (single image per page)");
+      // console.log("scrollmode (single image per page)");
       sw.classList.replace("stretch_conti", "stretch_single");
       caller.innerHTML=
         feather.icons['minimize'].toSvg();
       // avoid displacement bug by offsetting one pixel
       scroll_to(currentshown, false, 1);
     } else if (sw.classList.contains("stretch_padded")) {
-      console.log("scrollmode (continuous wall)");
+      // console.log("scrollmode (continuous wall)");
       // sw.classList.remove("stretched2");
       sw.classList.replace("stretch_padded", "stretch_conti");
       caller.innerHTML=
         feather.icons['maximize'].toSvg();
     } else {
-      console.log("scrollmode stretched1 (padded wall)");
+      // console.log("scrollmode stretched1 (padded wall)");
       sw.classList.replace("stretch_single", "stretch_padded");
       caller.innerHTML=
         feather.icons['columns'].toSvg();
@@ -113,22 +113,22 @@ function scroll_to(target=0, smooth=true, glitch_fix=0) {
     var $thisshown = null;
     var $thisnum   = null;
     if (typeof target === 'string' || target instanceof String) {
-        console.log('scroll to string', target)
+        // console.log('scroll to string', target)
         $thisshown = target;
         $thisnum = card_ids.indexOf(target);
     } else {
         $thisnum = num_bc($lastnum+target);
         $thisshown = card_ids[$thisnum];
-        console.log('scroll to int', $lastnum, target)
+        // console.log('scroll to int', $lastnum, target)
     }
-    console.log($lastnum, $thisnum, $thisshown);
+    // console.log($lastnum, $thisnum, $thisshown);
     let tar = document.getElementById($thisshown);
     // $debug = tar;
     let sw  = document.getElementById('scrolling-wrapper');
 
     // const y = tar.getBoundingClientRect().top + sw.pageYOffset;
     const x = tar.offsetLeft+ .5*tar.offsetWidth - .5*sw.offsetWidth + glitch_fix;
-    console.log($thisshown, x)
+    // console.log($thisshown, x)
 
     sw.scrollTo({left: x, behavior: (smooth ? 'smooth':'auto') });
     // tar.scrollIntoView({behavior: 'smooth', inline: 'center'});
@@ -148,7 +148,7 @@ function scroll_to(target=0, smooth=true, glitch_fix=0) {
 
 
 window.onload = function () {
-  console.log("window onload");
+  // console.log("window onload");
   // enable lazy loading only after document was loaded
   // so that low res previews get fetched first.
   $lazyLoadInstance = new LazyLoad({
@@ -162,7 +162,7 @@ window.onload = function () {
     },
     callback_loaded: (img) => {
       // livephoto.js
-      console.log(img);
+      // console.log(img);
       check_and_replace_with_live_photo(img);
     }
   });

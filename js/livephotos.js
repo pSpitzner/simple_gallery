@@ -22,23 +22,31 @@ function check_and_replace_with_live_photo(img) {
     player.photoSrc = img.getAttribute("data-src");
     player.videoSrc = img.getAttribute("lp_video_src");
 
-    // match the classes of the image
-    player.classList.add("image-content", "lazy", "entered", "loaded");
-
+    // dont apply "image content" or scaling will break...
+    // player.classList.add("image-content", "lazy", "entered", "loaded");
+    // player.classList.add("image-content");
 
 
     // // Listen to events the player emits.
     player.addEventListener('photoload', evt => {
         setTimeout(function () {
             // hack apples fixed-size styling to recover or flexible resizing
-            player.style.removeProperty("width");
             player.style.height = "100%";
+            player.style.width = "100%";
             player.style["aspect-ratio"] = aspect_ratio;
 
-            player.children[1].style.width = "100%";
-            player.children[1].style.height = "100%";
-            player.children[1].children[0].style.width = "100%";
-            player.children[1].children[0].style.height = "100%";
+            // player.style.removeProperty("width");
+            // player.style.removeProperty("height");
+
+            // player.children[1].style.width = "100%";
+            // player.children[1].style.height = "100%";
+            // player.children[1].children[0].style.width = "100%";
+            // player.children[1].children[0].style.height = "100%";
+
+            // player.children[1].style["max-width"] = "100%";
+            // player.children[1].style["max-height"] = "100%";
+            // player.children[1].children[0].style["max-width"] = "100%";
+            // player.children[1].children[0].style["max-height"] = "100%";
 
             img.remove();
         }, 50);
