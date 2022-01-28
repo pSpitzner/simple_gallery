@@ -50,6 +50,7 @@ Note that, although Apple says you can just export live photos from the macos ph
 
 
 ### Libraries used for web stuff
-[Apple LivePhotoKit JS](https://developer.apple.com/documentation/livephotoskitjs)
-[verlok/vanilla-lazyload](https://github.com/verlok/vanilla-lazyload)
-[Feather icons](https://feathericons.com/)
+
+- [Apple LivePhotoKit JS](https://developer.apple.com/documentation/livephotoskitjs)
+- [verlok/vanilla-lazyload](https://github.com/verlok/vanilla-lazyload)
+- [Feather icons](https://feathericons.com/)
